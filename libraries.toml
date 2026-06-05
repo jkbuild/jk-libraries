@@ -1,15 +1,15 @@
 # SPDX-License-Identifier: Apache-2.0
 #
-# jk short-name registry.
+# jk library registry.
 #
 # Maps a curated short identifier to a Maven `group:artifact` pair. When a
-# project's jk.toml references a known short name, jk fills in the
+# project's jk.toml references a known library name, jk fills in the
 # coordinate automatically — the user only supplies a version:
 #
 #     [dependencies.main]
-#     jackson3-databind = "2.18.2"          # parser resolves via this table
+#     jackson3-databind = "2.18.2"          # `jk lock` resolves via this table
 #
-# Unknown short names fall back to the structured form
+# Unknown libraries names fall back to the structured form
 # `{ group = "...", version = "..." }`. Workspace-defined aliases in
 # `[workspace.dependencies]` take precedence over this list.
 #
@@ -18,7 +18,7 @@
 #
 # Curation policy:
 #   - Java/Kotlin ecosystem only (matches jk's v1 scope).
-#   - One canonical short name per artifact.
+#   - One canonical library name per artifact.
 #   - When the artifactId is already short and unambiguous (e.g. `picocli`,
 #     `guava`), prefer that as the short name.
 #   - Spring Boot starter prefix retained (`spring-boot-starter-*`) — it's
@@ -32,7 +32,7 @@
 #     (Spring Boot 2 vs 3 — same GAV, different version selector) keep
 #     one alias.
 
-[aliases]
+[libraries]
 
 # ─── Jackson 2 (com.fasterxml.jackson.*) ─────────────────────────────────
 jackson2-core                        = "com.fasterxml.jackson.core:jackson-core"
