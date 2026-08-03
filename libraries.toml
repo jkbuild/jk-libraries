@@ -172,6 +172,18 @@ kotlin-test                          = "org.jetbrains.kotlin:kotlin-test"
 kotlin-test-junit5                   = "org.jetbrains.kotlin:kotlin-test-junit5"
 kotlin-compiler-embeddable           = "org.jetbrains.kotlin:kotlin-compiler-embeddable"
 kotlin-scripting-jsr223              = "org.jetbrains.kotlin:kotlin-scripting-jsr223"
+kotlin-build-tools-api               = "org.jetbrains.kotlin:kotlin-build-tools-api"
+
+# ─── Groovy ─────────────────────────────────────────────────────────────
+groovy                               = "org.apache.groovy:groovy"
+groovy-json                          = "org.apache.groovy:groovy-json"
+groovy-xml                           = "org.apache.groovy:groovy-xml"
+groovy-templates                     = "org.apache.groovy:groovy-templates"
+groovy-dateutil                      = "org.apache.groovy:groovy-dateutil"
+groovy-nio                           = "org.apache.groovy:groovy-nio"
+groovy-sql                           = "org.apache.groovy:groovy-sql"
+groovy-test                          = "org.apache.groovy:groovy-test"
+groovy-test-junit5                   = "org.apache.groovy:groovy-test-junit5"
 
 # ─── kotlinx ────────────────────────────────────────────────────────────
 kotlinx-coroutines-core              = "org.jetbrains.kotlinx:kotlinx-coroutines-core"
@@ -451,6 +463,10 @@ quarkus-junit5                       = "io.quarkus:quarkus-junit5"
 quarkus-smallrye-openapi             = "io.quarkus:quarkus-smallrye-openapi"
 quarkus-smallrye-health              = "io.quarkus:quarkus-smallrye-health"
 quarkus-kotlin                       = "io.quarkus:quarkus-kotlin"
+# Bootstrap APIs (build plugins / tooling — not app starters)
+quarkus-bootstrap-core               = "io.quarkus:quarkus-bootstrap-core"
+quarkus-bootstrap-maven-resolver     = "io.quarkus:quarkus-bootstrap-maven-resolver"
+quarkus-bootstrap-app-model          = "io.quarkus:quarkus-bootstrap-app-model"
 
 # ─── Web frameworks — Micronaut ─────────────────────────────────────────
 micronaut-http-server-netty          = "io.micronaut:micronaut-http-server-netty"
@@ -763,6 +779,11 @@ sigstore-java                        = "dev.sigstore:sigstore-java"
 cyclonedx-core-java                  = "org.cyclonedx:cyclonedx-core-java"
 spdx-java                            = "org.spdx:java-spdx-library"
 in-toto                              = "io.github.in-toto:in-toto"
+spotless-lib                         = "com.diffplug.spotless:spotless-lib"
+openrewrite-java                     = "org.openrewrite:rewrite-java"
+openrewrite-java21                   = "org.openrewrite:rewrite-java-21"
+# Android packaging (apksig is pure-Java; lives on Google's Maven repo)
+apksig                               = "com.android.tools.build:apksig"
 
 # ─── Container / OCI / native ──────────────────────────────────────────
 jib-core                             = "com.google.cloud.tools:jib-core"
@@ -770,6 +791,8 @@ docker-java                          = "com.github.docker-java:docker-java"
 docker-java-transport-httpclient5    = "com.github.docker-java:docker-java-transport-httpclient5"
 graalvm-sdk                          = "org.graalvm.sdk:graal-sdk"
 graalvm-polyglot                     = "org.graalvm.polyglot:polyglot"
+# ProcessProperties / native-image annotations (compile-only for Graal projects)
+graalvm-nativeimage                  = "org.graalvm.sdk:nativeimage"
 native-image-svm                     = "org.graalvm.nativeimage:svm"
 
 # ─── Testcontainers ───────────────────────────────────────────────────
@@ -862,6 +885,10 @@ picocli                              = "info.picocli:picocli"
 picocli-codegen                      = "info.picocli:picocli-codegen"
 picocli-shell-jline3                 = "info.picocli:picocli-shell-jline3"
 jline                                = "org.jline:jline"
+jline-terminal                       = "org.jline:jline-terminal"
+jline-terminal-ffm                   = "org.jline:jline-terminal-ffm"
+jline-reader                         = "org.jline:jline-reader"
+jline-builtins                       = "org.jline:jline-builtins"
 jansi                                = "org.fusesource.jansi:jansi"
 airline                              = "com.github.rvesse:airline"
 jcommander                           = "org.jcommander:jcommander"
