@@ -20,9 +20,15 @@
 #   - Java/Kotlin ecosystem only (matches jk's v1 scope).
 #   - One canonical library name per artifact.
 #   - When the artifactId is already short and unambiguous (e.g. `picocli`,
-#     `guava`), prefer that as the short name.
-#   - Spring Boot starter prefix retained (`spring-boot-starter-*`) — it's
-#     load-bearing for grep / muscle-memory.
+#     `guava`, `jnats`, `java-jwt`, `tink`), prefer that as the short name.
+#     Do NOT prepend a vendor/org/group segment just to "namespace"
+#     (`nats-jnats`, `auth0-java-jwt`, `google-tink` are wrong).
+#   - DO prefix when the artifactId is generic, a module fragment, or would
+#     collide with another product (`s3`, `core`, `mysql`, `value`, `config`)
+#     — e.g. `aws-sdk-s3`, `zxing-core`, `testcontainers-mysql`.
+#   - Ecosystem families with load-bearing prefixes stay prefixed
+#     (`spring-boot-starter-*`, `aws-sdk-*`, `testcontainers-*`) — muscle
+#     memory / greppability, not pure namespacing.
 #   - Split aliases by major version when the Maven *coordinate* changes
 #     (e.g. Jackson 2 → 3 moved from com.fasterxml.jackson.* to
 #     tools.jackson.*). The registry deliberately does NOT pick a default
@@ -552,7 +558,7 @@ spring-kafka                         = "org.springframework.kafka:spring-kafka"
 spring-kafka-test                    = "org.springframework.kafka:spring-kafka-test"
 rabbitmq-amqp-client                 = "com.rabbitmq:amqp-client"
 spring-rabbit                        = "org.springframework.amqp:spring-rabbit"
-nats-jnats                           = "io.nats:jnats"
+jnats                                = "io.nats:jnats"
 pulsar-client                        = "org.apache.pulsar:pulsar-client"
 activemq-client                      = "org.apache.activemq:activemq-client"
 artemis-jms-client                   = "org.apache.activemq:artemis-jms-client"
@@ -700,8 +706,8 @@ nimbus-jose-jwt                      = "com.nimbusds:nimbus-jose-jwt"
 jjwt-api                             = "io.jsonwebtoken:jjwt-api"
 jjwt-impl                            = "io.jsonwebtoken:jjwt-impl"
 jjwt-jackson                         = "io.jsonwebtoken:jjwt-jackson"
-auth0-java-jwt                       = "com.auth0:java-jwt"
-google-tink                          = "com.google.crypto.tink:tink"
+java-jwt                             = "com.auth0:java-jwt"
+tink                                 = "com.google.crypto.tink:tink"
 shiro-core                           = "org.apache.shiro:shiro-core"
 shiro-spring                         = "org.apache.shiro:shiro-spring"
 keycloak-adapter-core                = "org.keycloak:keycloak-adapter-core"
@@ -868,7 +874,7 @@ handlebars                           = "com.github.jknack:handlebars"
 # ─── Annotations / nullness ────────────────────────────────────────────
 jspecify                             = "org.jspecify:jspecify"
 jetbrains-annotations                = "org.jetbrains:annotations"
-findbugs-jsr305                      = "com.google.code.findbugs:jsr305"
+jsr305                               = "com.google.code.findbugs:jsr305"
 checker-qual                         = "org.checkerframework:checker-qual"
 errorprone-annotations               = "com.google.errorprone:error_prone_annotations"
 errorprone-core                      = "com.google.errorprone:error_prone_core"
