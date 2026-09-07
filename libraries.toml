@@ -191,6 +191,11 @@ groovy-sql                           = "org.apache.groovy:groovy-sql"
 groovy-test                          = "org.apache.groovy:groovy-test"
 groovy-test-junit5                   = "org.apache.groovy:groovy-test-junit5"
 
+# ─── Scala 3 / Zinc ─────────────────────────────────────────────────────
+scala3-compiler                      = "org.scala-lang:scala3-compiler_3"
+scala3-sbt-bridge                    = "org.scala-lang:scala3-sbt-bridge"
+zinc                                 = "org.scala-sbt:zinc_3"
+
 # ─── kotlinx ────────────────────────────────────────────────────────────
 kotlinx-coroutines-core              = "org.jetbrains.kotlinx:kotlinx-coroutines-core"
 kotlinx-coroutines-reactor           = "org.jetbrains.kotlinx:kotlinx-coroutines-reactor"
